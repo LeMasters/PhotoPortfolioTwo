@@ -1,0 +1,18 @@
+- company: Miami University Games Lab
+  title: Student Designer
+  period: Aug 2025 - Present
+  context: A student studio that builds small games with faculty and community partners.
+  bullets:
+    - Designed and blocked out four levels for a museum-commissioned puzzle game.
+    - Ran weekly playtests and turned observation notes into design changes.
+  projects:
+    - title: Lantern Hours
+      desc: A short puzzle game about light and shadow, built in Unity.
+      tags:
+        - Level design
+        - Unity
+- company: Global Game Jam
+  title: Designer (team of four)
+  period: Jan 2025
+  bullets:
+    - Wrote the core rules and tuned difficulty for a 48-hour jam game.

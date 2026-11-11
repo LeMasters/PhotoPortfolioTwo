@@ -1,0 +1,27 @@
+# Shown under the heading "Projects" (renamed in layouts/partials/presentations.html).
+- title: Lantern Hours
+  event: Puzzle game · Unity
+  date: "2026"
+  description: I designed the levels and the light-and-shadow rule set. Four of the six levels shipped as I drew them.
+  tags:
+    - Level design
+    - Systems
+  media_src: images/project-lantern.jpg
+  link: https://itch.io/
+- title: Low Tide
+  event: Global Game Jam
+  date: "2025"
+  description: Made in 48 hours by four people. I wrote the rules and tuned the difficulty curve.
+  tags:
+    - Game jam
+    - Rules design
+  media_src: images/project-tide.jpg
+  link: https://itch.io/
+- title: Field Notes
+  event: Board game prototype
+  date: "2024"
+  description: A paper prototype about birdwatching, tested with twelve players over three sessions.
+  tags:
+    - Tabletop
+    - Playtesting
+  media_src: images/project-field.jpg

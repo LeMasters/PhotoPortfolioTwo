@@ -1,0 +1,198 @@
+# Pages CMS configuration for the Kiyomi theme test.
+# One form per editable file. Docs: https://pagescms.org/docs/configuration/
+#
+# Paths are written WITHOUT a leading slash (images/x.jpg, not /images/x.jpg)
+# so they work when the site lives in a subfolder (lemasters.github.io/PhotoPortfolioTwo/).
+
+media:
+  - name: images
+    label: Images
+    input: static/images
+    output: images
+  - name: files
+    label: Files
+    input: static/files
+    output: files
+
+content:
+  - name: profile
+    label: Profile
+    type: file
+    path: config/_default/params.yaml
+    format: yaml
+    fields:
+      - name: firstName
+        label: First name
+        type: string
+        required: true
+      - name: lastName
+        label: Last name
+        type: string
+        required: true
+      - name: tagline
+        label: Tagline
+        type: string
+        description: Shown under your name, e.g. "Game designer and level builder".
+      - name: location
+        label: Location
+        type: string
+      - name: email
+        label: Email
+        type: string
+      - name: linkedin
+        label: LinkedIn URL
+        type: string
+      - name: profileImage
+        label: Profile photo
+        type: image
+        options:
+          media: images
+      - name: heroBackground
+        label: Background image (top of page)
+        type: image
+        options:
+          media: images
+      - name: resumeFile
+        label: Résumé (PDF)
+        type: file
+        options:
+          media: files
+      - name: description
+        label: Search and sharing description
+        type: text
+      - name: favicon
+        type: string
+        hidden: true
+      - name: ogImage
+        type: string
+        hidden: true
+
+  - name: about
+    label: About
+    type: file
+    path: content/_index.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        type: string
+        hidden: true
+      - name: body
+        label: About text
+        type: rich-text
+
+  - name: projects
+    label: Projects
+    type: file
+    path: data/presentations.yaml
+    format: yaml
+    list: true
+    fields:
+      - name: title
+        type: string
+        required: true
+      - name: event
+        label: Type or occasion
+        type: string
+        description: e.g. "Puzzle game · Unity" or "Global Game Jam".
+      - name: date
+        label: Year
+        type: string
+      - name: description
+        label: What you did
+        type: text
+      - name: tags
+        type: string
+        list: true
+      - name: media_src
+        label: Image
+        type: image
+        options:
+          media: images
+      - name: link
+        label: Link (itch.io, Steam, etc.)
+        type: string
+
+  - name: experience
+    label: Experience
+    type: file
+    path: data/experience.yaml
+    format: yaml
+    list: true
+    fields:
+      - name: company
+        label: Organization
+        type: string
+        required: true
+      - name: title
+        label: Role
+        type: string
+      - name: period
+        type: string
+        description: e.g. "Aug 2025 - Present".
+      - name: context
+        label: About the organization
+        type: text
+      - name: bullets
+        label: What you did
+        type: string
+        list: true
+      - name: projects
+        type: object
+        list: true
+        fields:
+          - name: title
+            type: string
+          - name: desc
+            label: Description
+            type: string
+          - name: tags
+            type: string
+            list: true
+
+  - name: skills
+    label: Skills
+    type: file
+    path: data/skills.yaml
+    format: yaml
+    list: true
+    fields:
+      - name: category
+        type: string
+        required: true
+      - name: items
+        label: Skills
+        type: object
+        list: true
+        fields:
+          - name: name
+            type: string
+          - name: explanation
+            type: text
+
+  - name: education
+    label: Education
+    type: file
+    path: data/education.yaml
+    format: yaml
+    list: true
+    fields:
+      - name: degree
+        type: string
+      - name: school
+        type: string
+      - name: year
+        type: string
+
+  - name: awards
+    label: Awards
+    type: file
+    path: data/awards.yaml
+    format: yaml
+    list: true
+    fields:
+      - name: title
+        type: string
+      - name: source
+        type: string
+      - name: link
+        type: string

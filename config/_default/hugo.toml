@@ -1,0 +1,7 @@
+# Technical site settings. Students don't edit this file.
+# Personal details (name, tagline, photos, links) are in params.yaml beside it.
+baseURL = "https://example.org/"
+languageCode = "en-us"
+title = "Jordan Avery — Game Designer"
+theme = "kiyomi-portfolio"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap"]

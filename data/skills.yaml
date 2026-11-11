@@ -1,0 +1,12 @@
+- category: Design
+  items:
+    - name: Level design
+      explanation: Blockouts, pacing and wayfinding for 3D puzzle spaces.
+    - name: Playtesting
+      explanation: Planning sessions, observing players, and turning notes into changes.
+- category: Tools
+  items:
+    - name: Unity
+      explanation: Two shipped student projects; comfortable with ProBuilder and Timeline.
+    - name: Twine
+      explanation: Branching narrative prototypes.

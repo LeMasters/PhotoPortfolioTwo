@@ -1,0 +1,12 @@
+firstName: Jordan
+lastName: Avery
+tagline: Game designer and level builder
+location: Oxford, Ohio
+email: jordan.avery@example.edu
+linkedin: https://www.linkedin.com/in/example/
+profileImage: images/profile.jpg
+heroBackground: images/hero-bg.jpg
+favicon: favicon.svg
+ogImage: images/hero-bg.jpg
+resumeFile: files/resume.pdf
+description: Jordan Avery — game designer focused on level design and systems.
