@@ -1,0 +1,36 @@
+{{- /* Site-level override: title and description come from the student's Profile, not hugo.toml. */ -}}
+{{- $name := trim (printf "%s %s" (.Site.Params.firstName | default "") (.Site.Params.lastName | default "")) " " -}}
+{{- $title := .Site.Title -}}
+{{- with $name }}{{ $title = printf "%s · Portfolio" . }}{{ end -}}
+{{- $desc := .Site.Params.description | default .Site.Params.tagline | default $title -}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $desc }}">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="{{ .Site.Params.favicon | relURL }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:image" content="{{ .Site.Params.ogImage | absURL }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $desc }}">
+<meta name="twitter:image" content="{{ .Site.Params.ogImage | absURL }}">
+
+<!-- CSS -->
+{{ $mainCSS := resources.Get "css/main.css" }}
+{{ $animCSS := resources.Get "css/animations.css" }}
+{{ if $mainCSS }}<link rel="stylesheet" href="{{ $mainCSS.RelPermalink }}">{{ end }}
+{{ if $animCSS }}<link rel="stylesheet" href="{{ $animCSS.RelPermalink }}">{{ end }}
+
+<!-- Site-level addition: keep the floating contact button out of the way while the top-of-page links are on screen -->
+<style>
+  .fab.fab-away, .fab-popover.fab-away { opacity: 0; pointer-events: none; transform: scale(0.8); }
+</style>

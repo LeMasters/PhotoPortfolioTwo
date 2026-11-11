@@ -1,0 +1,24 @@
+{{- /*
+  Returns a usable LinkedIn address from whatever the student typed.
+  Accepts:  https://www.linkedin.com/in/name   (used as is)
+            www.linkedin.com/in/name           (https:// added)
+            linkedin.com/in/name               (https:// added)
+            name  or  @name                    (treated as a profile handle)
+  Returns "" when the field is empty, so callers can hide the link.
+  Usage: {{ $li := partial "linkedin-url.html" (.Site.Params.linkedin | default "") }}
+*/ -}}
+{{- $u := trim (string .) " \t\r\n" -}}
+{{- $out := "" -}}
+{{- if $u -}}
+  {{- $l := lower $u -}}
+  {{- if or (hasPrefix $l "https://") (hasPrefix $l "http://") -}}
+    {{- $out = $u -}}
+  {{- else if in $l "linkedin.com" -}}
+    {{- $out = printf "https://%s" (strings.TrimLeft "/" $u) -}}
+  {{- else -}}
+    {{- $handle := strings.TrimPrefix "@" $u -}}
+    {{- $handle = strings.TrimPrefix "in/" (strings.Trim $handle "/") -}}
+    {{- $out = printf "https://www.linkedin.com/in/%s" $handle -}}
+  {{- end -}}
+{{- end -}}
+{{- return $out -}}

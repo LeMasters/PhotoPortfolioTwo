@@ -20,7 +20,7 @@
                 Your browser does not support the video tag.
               </video>
               {{ else if $item.media_src }}
-              <img src="{{ $item.media_src | relURL }}" alt="{{ $item.title }}" style="width: 100%; height: auto; display: block;">
+              <img src="{{ $item.media_src | relURL }}" alt="{{ $item.title }}" loading="lazy" style="width: 100%; height: auto; display: block;">
               {{ end }}
             </div>
 
@@ -36,7 +36,7 @@
               {{ if $item.link }}
               <div class="mb-3">
                 <a href="{{ $item.link }}" target="_blank" rel="noopener noreferrer" class="text-xs text-primary" style="text-decoration: underline;">
-                  Play it &rarr;
+                  {{ $item.linkLabel | default "View project" }} &rarr;
                 </a>
               </div>
               {{ end }}

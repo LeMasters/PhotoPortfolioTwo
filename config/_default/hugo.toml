@@ -2,6 +2,6 @@
 # Personal details (name, tagline, photos, links) are in params.yaml beside it.
 baseURL = "https://example.org/"
 languageCode = "en-us"
-title = "Jordan Avery — Game Designer"
+title = "Portfolio"  # fallback only; the page title is built from the name in params.yaml
 theme = "kiyomi-portfolio"
 disableKinds = ["taxonomy", "term", "RSS", "sitemap"]

@@ -42,6 +42,7 @@ content:
       - name: linkedin
         label: LinkedIn URL
         type: string
+        description: Your profile address, e.g. https://www.linkedin.com/in/your-name. Leave empty to hide LinkedIn links.
       - name: profileImage
         label: Profile photo
         type: image
@@ -55,11 +56,17 @@ content:
       - name: resumeFile
         label: Résumé (PDF)
         type: file
+        description: Leave empty to hide the "Download Resume" button.
         options:
           media: files
+      - name: contactMessage
+        label: Contact message
+        type: string
+        description: First line of the contact section, e.g. "Looking for a level designer? Let's talk." Leave empty for a general invitation.
       - name: description
         label: Search and sharing description
         type: text
+        description: One or two sentences shown in search results and link previews. Leave empty to use your tagline.
       - name: favicon
         type: string
         hidden: true
@@ -111,6 +118,10 @@ content:
       - name: link
         label: Link (itch.io, Steam, etc.)
         type: string
+      - name: linkLabel
+        label: Link text
+        type: string
+        description: e.g. "Play it", "Watch the trailer", "See the album". Leave empty for "View project".
 
   - name: experience
     label: Experience
